@@ -2,12 +2,12 @@
 let fs = require('fs');
 
 // Le agregue este try...catch para solucionar el problema de creacion del archivo productos.txt y que lo inicie con los []
-	// try{
-	// 	let ArrayProd = `[]`;
-	// 	let archivo = fs.writeFileSync('./productos.txt', ArrayProd);
-	// } catch(error){
-	// 	console.log(error);
-	// }
+// try{
+// 	let ArrayProd = `[]`;
+// 	let archivo = fs.writeFileSync('./productos.txt', ArrayProd);
+// } catch(error){
+// 	console.log(error);
+// }
 
 class Contenedor {
 	constructor(url) {
@@ -25,14 +25,14 @@ class Contenedor {
 
 	async getRandom() {
 		const products = await this.getAll();
-		const randomID = (Math.floor(Math.random() * products.length) + 1 );
+		const randomID = (Math.floor(Math.random() * products.length) + 1);
 		console.log(`Numero random ${randomID}`)
 		return this.getById(randomID)
-	  }
+	}
 
 	async save(prod) {
 		const data = await this.getAll();
-		let newId;
+		let newId = data;
 		if (data.length == 0) {
 			newId = 1;
 		} else {
@@ -41,7 +41,7 @@ class Contenedor {
 		const newProd = { ...prod, id: newId }
 		data.push(newProd);
 		try {
-			await fs.promises.writeFile(this.url, JSON.stringify(data, null, 2), (e, contenido) =>{});
+			await fs.promises.writeFile(this.url, JSON.stringify(data, null, 2), (e, contenido) => { });
 			return newProd;
 		} catch (error) {
 			console.log('Error al guardar un nuevo producto ----->', error);
@@ -71,7 +71,7 @@ class Contenedor {
 				console.log(`No existe el objeto con id ${id}`)
 			} else {
 				const newProd = data.filter(obj => obj.id != id)
-				await fs.promises.writeFile(this.url, JSON.stringify(newProd, null, 2), (e, contenido) =>{})
+				await fs.promises.writeFile(this.url, JSON.stringify(newProd, null, 2), (e, contenido) => { })
 				console.log(`Se elimino el producto con id ${id}`, prod);
 				return prod;
 			}
@@ -84,7 +84,7 @@ class Contenedor {
 		const data = await this.getAll()
 		try {
 			const newProd = []
-			await fs.promises.writeFile(this.url, JSON.stringify(newProd, null, 2), (e, contenido) =>{})
+			await fs.promises.writeFile(this.url, JSON.stringify(newProd, null, 2), (e, contenido) => { })
 			console.log('Se borraron todos los productos')
 			return data;
 		} catch (error) {

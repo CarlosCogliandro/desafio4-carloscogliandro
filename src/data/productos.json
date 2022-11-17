@@ -1,7 +1,7 @@
 [
   {
-    "nombre": "Heladera",
-    "precio": 15975,
+    "title": "Heladera",
+    "price": 58598,
     "thumbnail": "www.foto.com/foto",
     "id": 1
   },
@@ -28,6 +28,11 @@
     "precio": 690,
     "thumbnail": "www.foto.com/foto",
     "id": 5
+  },
+  {
+    "title": "pelota",
+    "price": 23423,
+    "thumbnail": "www.google.com/asd",
+    "id": 6
   }
 ]
-  
