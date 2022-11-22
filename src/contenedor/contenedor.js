@@ -91,7 +91,24 @@ class Contenedor {
 			console.log('Error al vaciar ----->', error);
 		}
 	};
-}
+
+	async update(obj) {
+		try {
+			let productos = await this.getAll();
+			productos.map(function (item) {
+				if (item.id === obj.id) {
+					item.title = obj.title,
+					item.price = obj.price,
+					item.thumbnail = obj.thumbnail
+				};
+			});
+			await fs.promises.writeFile(this.url, JSON.stringify(productos, null, '\t'));
+			return productos;
+		} catch (error) {
+			console.log('Error al actualizar ----->', error);
+		}
+	};
+};
 
 
 const productos = new Contenedor('../data/productos.json');
@@ -99,23 +116,23 @@ const productos = new Contenedor('../data/productos.json');
 
 // function actions(){
 // 	setTimeout(()=>{
-// 		productos.save({ nombre: 'Heladera', precio: 15975, thumbnail: 'www.foto.com/foto' });
+// 		productos.save({ title: 'Heladera', price: 15975, thumbnail: 'www.foto.com/foto' });
 // 	}, 500)
 
 // 	setTimeout(()=>{
-// 		productos.save({ nombre: 'Lavarropas', precio: 3215, thumbnail: 'www.foto.com/foto' });
+// 		productos.save({ title: 'Lavarropas', price: 3215, thumbnail: 'www.foto.com/foto' });
 // 	}, 1000)
 
 // 	setTimeout(()=>{
-// 		productos.save({ nombre: 'Cocina', precio: 98560, thumbnail: 'www.foto.com/foto'});
+// 		productos.save({ title: 'Cocina', price: 98560, thumbnail: 'www.foto.com/foto'});
 // 	}, 1500)
 
 // 	setTimeout(()=>{
-// 		productos.save({ nombre: 'Pava Electrica', precio: 5690, thumbnail: 'www.foto.com/foto'});
+// 		productos.save({ title: 'Pava Electrica', price: 5690, thumbnail: 'www.foto.com/foto'});
 // 	}, 2000)
 
 // 	setTimeout(()=>{
-// 		productos.save({ nombre: 'Tostadora', precio: 690, thumbnail: 'www.foto.com/foto'});
+// 		productos.save({ title: 'Tostadora', price: 690, thumbnail: 'www.foto.com/foto'});
 // 	}, 2000)
 
 // 	setTimeout(()=>{

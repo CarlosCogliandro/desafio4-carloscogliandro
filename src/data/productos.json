@@ -1,38 +1,38 @@
 [
-  {
-    "title": "Heladera",
-    "price": 58598,
-    "thumbnail": "www.foto.com/foto",
-    "id": 1
-  },
-  {
-    "nombre": "Lavarropas",
-    "precio": 3215,
-    "thumbnail": "www.foto.com/foto",
-    "id": 2
-  },
-  {
-    "nombre": "Cocina",
-    "precio": 98560,
-    "thumbnail": "www.foto.com/foto",
-    "id": 3
-  },
-  {
-    "nombre": "Pava Electrica",
-    "precio": 5690,
-    "thumbnail": "www.foto.com/foto",
-    "id": 4
-  },
-  {
-    "nombre": "Tostadora",
-    "precio": 690,
-    "thumbnail": "www.foto.com/foto",
-    "id": 5
-  },
-  {
-    "title": "pelota",
-    "price": 23423,
-    "thumbnail": "www.google.com/asd",
-    "id": 6
-  }
+	{
+		"title": "Heladera",
+		"price": 58598,
+		"thumbnail": "www.foto.com/foto",
+		"id": 1
+	},
+	{
+		"title": "Lavarropas",
+		"price": 3215,
+		"thumbnail": "www.foto.com/foto",
+		"id": 2
+	},
+	{
+		"title": "Cocina",
+		"price": 98560,
+		"thumbnail": "www.foto.com/foto",
+		"id": 3
+	},
+	{
+		"title": "Pava Electrica",
+		"price": 5690,
+		"thumbnail": "www.foto.com/foto",
+		"id": 4
+	},
+	{
+		"title": "Tostadora",
+		"price": 690,
+		"thumbnail": "www.foto.com/foto",
+		"id": 5
+	},
+	{
+		"title": "pelota",
+		"price": 23423,
+		"thumbnail": "www.google.com/asd",
+		"id": 6
+	}
 ]

@@ -37,11 +37,32 @@ module.exports = app => {
         return res.json(productos.save(obj));
     });
       
-    router.put('/:id', async (req, res, next) => {
+    router.put('/:id', (req, res, next) => {
         let obj = req.body;
         let id = Number(req.params.id);
-        return res.json(productos.save(obj, id));
+        return res.json(productos.update(obj, id));
     });
+
+    // router.put("/:id", (req, res, next)=>{
+    //     try {
+    //         let id = req.params.id;
+    //         let {title, price, thumbnail} = req.body
+    //         if(!title || !price || !thumbnail){
+    //             res.send("faltan datos")
+    //         } else{
+    //             let updateProduct ={
+    //                 id,
+    //                 title,
+    //                 price,
+    //                 thumbnail
+    //             };
+    //             productos.update(updateProduct)
+    //             res.send(`se actualizo el producto ${updateProduct.title}`)
+    //         }
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // });
       
     router.delete('/:id', (req, res, next) => {
         let id = Number(req.params.id);
